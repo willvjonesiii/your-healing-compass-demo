@@ -232,11 +232,21 @@
     }
 
     @media (max-width: 580px) {
-      .hero-badge {
-        top: auto; bottom: clamp(9rem, 22vw, 13rem);
-        right: 1.2rem; padding: 0.6rem 0.9rem;
+      .hero-content {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        grid-template-rows: 1fr auto;
+        gap: 1rem 0.8rem;
+        align-items: end;
       }
-      .hero-content { padding-bottom: 12rem; }
+      .hero-text { grid-column: 1; grid-row: 1; align-self: end; }
+      .hero-badge {
+        position: static;
+        grid-column: 2; grid-row: 1;
+        align-self: end;
+        padding: 0.7rem 0.8rem;
+      }
+      .hero-ctas { grid-column: 1 / -1; grid-row: 2; }
       .hero-badge-text { font-size: 0.78rem; }
     }
 
@@ -686,14 +696,15 @@
       <div class="hero-overlay"></div>
     </div>
 
-    <div class="hero-badge">
-      <span class="hero-badge-label">Vancouver Island</span>
-      <span class="hero-badge-text">Evidential Medium<br>Reiki Practitioner</span>
-    </div>
-
     <div class="hero-content">
-      <h1>A Space<br>to <em>Soften.</em></h1>
-      <p class="hero-sub">Where the grounded and the cosmic meet — supporting healing through mind, body, energy, and soul.</p>
+      <div class="hero-text">
+        <h1>A Space<br>to <em>Soften.</em></h1>
+        <p class="hero-sub">Where the grounded and the cosmic meet — supporting healing through mind, body, energy, and soul.</p>
+      </div>
+      <div class="hero-badge">
+        <span class="hero-badge-label">Vancouver Island</span>
+        <span class="hero-badge-text">Evidential Medium<br>Reiki Practitioner</span>
+      </div>
       <div class="hero-ctas">
         <a href="https://www.yourhealingcompass.com/book-online" target="_blank" class="btn-primary">Book a Session</a>
         <a href="#about" class="btn-ghost">Meet Tamsyn</a>
